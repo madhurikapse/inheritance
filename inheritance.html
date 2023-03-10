@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inheritance & prototype</title>
+</head>
+<body>
+    <h1 style="color: red;margin-left: 500px;">inheritance & prototype</h1>
+    <p >Q1. Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</p>
+    <fieldset>
+        <Pre style="color: blue;">Ans:
+            const arr = [1,2,3,4,5,6];
+    const arrsum = {
+	addAll:function(arr){
+		let sum = 0;
+		for(let i=0; i<arr.length; i++){
+		  sum = sum + arr[i];
+		}
+		console.log(sum)
+	  }
+	}
+
+<!-- Array.__proto__ = arrsum;
+Array.addAll(arr); -->
+        </Pre>
+    </fieldset>
+    <p>Q2. Write code to explain prototype chaining</p>
+    <fieldset>
+        <pre style="color: blue;">Ans:
+            class Person {
+  constructor() {
+    this.gender = 'Female';
+  }
+  printPerson() {}
+}
+class User extends Person {
+  constructor() {
+    super();
+    this.name = 'mera';
+  }
+  printUser() {}
+}
+var u = new User();
+console.log(u);
+
+output:User {gender: 'Female',name: 'mera'}   
+
+        </pre>
+    </fieldset>
+    <p>Q3.Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays</p>
+    <fieldset>
+      <pre style="color: blue;" >Ans:
+      let arr1 = [1,2,3,4];
+      let arr2 = [1,2,3,4,5,];
+      let arr3 = [1,2,3,4,5,6,];
+
+          const arrsum = {
+        addAll:function(arr){
+          let sum = 0;
+          for(let i=0; i<arr.length; i++){
+            sum += arr[i];
+          }
+          console.log(sum)
+          }
+        }
+
+       <!-- Array.__proto__ = arrsum;
+      Array.addAll(arr1); 
+      Array.addAll(arr2); 
+      Array.addAll(arr3);  -->
+      output:10,15,21
+        </pre>
+    </fieldset>
+
+    <p>Q4.Write a JavaScript function to retrieve all the names of object's own and inherited properties.</p>
+     <fieldset>
+        <pre style="color: blue;">Ans:
+        var student = {
+            name : "madhuri",
+            course : "Full-stack",
+            rollNo : 31,
+            }
+            result = Object.keys(student)
+            console.log(result);
+
+            output:[object Array] (3)
+            ["name","course","rollNo"]
+        </pre>
+     </fieldset>
+</body>
+</html>
